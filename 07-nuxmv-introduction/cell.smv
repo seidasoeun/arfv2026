@@ -1,0 +1,12 @@
+MODULE cell(input)
+VAR
+val : {red, green, blue};
+ASSIGN
+next(val) := input;
+
+
+MODULE main
+VAR
+c1 : cell(c3.val);
+c2 : cell(c1.val);
+c3 : cell(c2.val);

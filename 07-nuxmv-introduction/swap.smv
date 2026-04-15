@@ -1,0 +1,16 @@
+MODULE main
+VAR
+  arr: array 0..1 of {1,2};
+  i : 0..1;
+ASSIGN
+  init(arr[0]) := 1;
+  init(arr[1]) := 2;
+  init(i) := 0;
+  next(i) := 1-i;
+TRANS
+  next(arr[i]) = arr[1-i] &
+  next(arr[1-i]) = arr[i];
+  -- for the "expected result" do instead
+  -- next(arr)[i] = arr[1-i] &
+  -- next(arr)[1-i] = arr[i];
+
